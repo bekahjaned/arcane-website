@@ -1,0 +1,36 @@
+.text-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+p.cta {
+  font-family: Proza Libre;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 0;
+  color: #211114;
+}
+
+svg {
+  padding-left: 8px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.text-button:hover {
+  cursor: pointer;
+}
+
+.text-button:hover svg {
+  -webkit-transform: translateX(8px);
+          transform: translateX(8px);
+}
+/*# sourceMappingURL=text-button.css.map */

@@ -1,0 +1,6 @@
+.hero-textbox {
+  background-color: rgba(245, 249, 250, 0.7);
+  grid-column-start: span 6;
+  margin-bottom: 20px;
+  padding: 30px;
+}

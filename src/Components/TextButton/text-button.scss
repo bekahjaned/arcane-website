@@ -1,0 +1,27 @@
+.text-button {
+  display: flex;
+  align-items: center;
+}
+
+p.cta {
+  font-family: Proza Libre;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 0;
+  color: #211114;
+}
+
+svg {
+  padding-left: 8px;
+  transition: transform 0.3s ease-out;
+}
+
+.text-button:hover {
+  cursor: pointer;
+
+  svg {
+    transform: translateX(8px);
+  }
+}
