@@ -7,7 +7,7 @@
           align-items: center;
 }
 
-p.cta {
+.cta {
   font-family: Proza Libre;
   font-style: normal;
   font-weight: 500;
@@ -15,6 +15,22 @@ p.cta {
   line-height: 24px;
   padding-bottom: 0;
   color: #211114;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta:before, .cta:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0px;
+  height: 2px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background-color: #211114;
 }
 
 svg {
@@ -32,5 +48,28 @@ svg {
 .text-button:hover svg {
   -webkit-transform: translateX(8px);
           transform: translateX(8px);
+  color: #075663;
+}
+
+.text-button:hover .cta {
+  color: #075663;
+}
+
+.text-button:hover .cta:before, .text-button:hover .cta:after {
+  width: 100%;
+  opacity: 1;
+  background-color: #075663;
+}
+
+.text-button:active svg {
+  color: #397882;
+}
+
+.text-button:active .cta {
+  color: #397882;
+}
+
+.text-button:active .cta:before, .text-button:active .cta:after {
+  background-color: #397882;
 }
 /*# sourceMappingURL=text-button.css.map */

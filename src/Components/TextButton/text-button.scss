@@ -3,7 +3,9 @@
   align-items: center;
 }
 
-p.cta {
+$animate: all 0.3s ease-in-out;
+
+.cta {
   font-family: Proza Libre;
   font-style: normal;
   font-weight: 500;
@@ -11,6 +13,21 @@ p.cta {
   line-height: 24px;
   padding-bottom: 0;
   color: #211114;
+  position: relative;
+  transition: $animate;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0px;
+    height: 2px;
+    transition: $animate;
+    opacity: 0;
+    background-color: #211114;
+  }
 }
 
 svg {
@@ -23,5 +40,36 @@ svg {
 
   svg {
     transform: translateX(8px);
+    color: #075663;
+  }
+
+  .cta {
+    color: #075663;
+  }
+
+  .cta {
+    &:before,
+    &:after {
+      width: 100%;
+      opacity: 1;
+      background-color: #075663;
+    }
+  }
+}
+
+.text-button:active {
+  svg {
+    color: #397882;
+  }
+
+  .cta {
+    color: #397882;
+  }
+
+  .cta {
+    &:before,
+    &:after {
+      background-color: #397882;
+    }
   }
 }

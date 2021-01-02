@@ -11,6 +11,6 @@
   display: grid;
   grid-template-columns: repeat(12, 80px);
   grid-column-gap: 20px;
-  height: 780px;
+  height: 100vh;
   align-content: end;
 }
