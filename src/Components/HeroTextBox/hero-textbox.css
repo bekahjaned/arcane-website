@@ -3,4 +3,14 @@
   grid-column-start: span 6;
   margin-bottom: 20px;
   padding: 30px;
+  /* animation: boxGrows 0.3s ease-out; */
+}
+
+@keyframes boxGrows {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }

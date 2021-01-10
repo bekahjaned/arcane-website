@@ -1,3 +1,19 @@
+@keyframes dropIn {
+  0% {
+    translate: 0 -20px;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
 h1 {
   font-family: Cormorant;
   font-style: normal;
@@ -6,4 +22,5 @@ h1 {
   line-height: 64px;
   color: #080707;
   padding-bottom: 24px;
+  animation: dropIn 1s ease-in-out;
 }

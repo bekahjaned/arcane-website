@@ -30,9 +30,22 @@ $animate: all 0.3s ease-in-out;
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 svg {
   padding-left: 8px;
   transition: transform 0.3s ease-out;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 .text-button:hover {
