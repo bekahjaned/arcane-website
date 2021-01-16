@@ -14,10 +14,10 @@
   font-size: 16px;
   line-height: 24px;
   padding-bottom: 0;
-  color: #211114;
+  color: #8e2800;
   position: relative;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .cta:before, .cta:after {
@@ -27,8 +27,8 @@
   left: 0;
   width: 0px;
   height: 2px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   opacity: 0;
   background-color: #211114;
 }
@@ -36,9 +36,6 @@
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
-  }
-  50% {
-    opacity: 0.25;
   }
   100% {
     opacity: 1;
@@ -49,22 +46,20 @@
   0% {
     opacity: 0;
   }
-  50% {
-    opacity: 0.25;
-  }
   100% {
     opacity: 1;
   }
 }
 
-svg {
+svg.cta-arrow {
+  color: #8e2800;
   padding-left: 8px;
+  -webkit-animation: fadeIn 0.5s ease-out;
+          animation: fadeIn 0.5s ease-out;
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -webkit-animation: fadeIn 0.4s ease-in-out;
-          animation: fadeIn 0.4s ease-in-out;
 }
 
 .text-button:hover {
