@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-$animate: all 0.3s ease-in-out;
+$animate: all 1s ease-in-out;
 
 .cta {
   font-family: Proza Libre;
@@ -34,8 +34,8 @@ $animate: all 0.3s ease-in-out;
   0% {
     opacity: 0;
   }
-  50% {
-    opacity: 0.25;
+  25% {
+    opacity: 0;
   }
   100% {
     opacity: 1;
