@@ -8,7 +8,7 @@ function TextButton() {
     return (
         <div className="text-button">
             <p className="cta">Shop</p>
-            <FontAwesomeIcon icon={faArrowRight}/>
+            <FontAwesomeIcon className="cta-arrow" icon={faArrowRight}/>
         </div>
     )
 }
