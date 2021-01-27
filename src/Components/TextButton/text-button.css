@@ -16,8 +16,8 @@
   padding-bottom: 0;
   color: #8e2800;
   position: relative;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .cta:before, .cta:after {
@@ -27,8 +27,8 @@
   left: 0;
   width: 0px;
   height: 2px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   opacity: 0;
   background-color: #211114;
 }
