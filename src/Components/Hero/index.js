@@ -1,16 +1,16 @@
 import React from 'react';
-import './hero.css';
 
 import hero1 from "../../Assets/hero-image.jpg"
 import hero2 from "../../Assets/hero-image2.jpg"
-import hero3 from "../../Assets/hero-image3.jpg"
 import hero4 from "../../Assets/hero-image4.jpg"
+
+import { HeroWrap } from '../../Elements/HeroWrap/'
 
 import HeroTextBox from '../HeroTextBox/'
 
 function Hero() {
     return (
-        <div className="hero">
+        <HeroWrap>
             <div className="slideshow">
                 <div className="slideshow-item">
                     <img src={hero1} alt="textiles" />
@@ -25,7 +25,7 @@ function Hero() {
             <div className="hero-grid">
                 <HeroTextBox />
             </div>
-        </div>
+        </HeroWrap>
     )
 }
 
