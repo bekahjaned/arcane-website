@@ -17,7 +17,6 @@ hr.blue {
   border-radius: 1px;
   margin-bottom: 3px;
   border: 0 none;
-  animation: lineGrows 0.5s ease-out;
 }
 
 hr.yellow {
@@ -27,7 +26,6 @@ hr.yellow {
   border-radius: 1px;
   margin-bottom: 3px;
   border: 0 none;
-  animation: lineGrows 0.7s ease-out;
 }
 
 hr.red {
@@ -37,16 +35,15 @@ hr.red {
   border-radius: 1px;
   margin-bottom: 32px;
   border: 0 none;
-  animation: lineGrows 0.9s ease-out;
 }
 
-@keyframes lineGrows {
-  0% {
-    transform: scaleX(0);
-    transform-origin: bottom left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+[data-aos="line-grows"] {
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition-property: transform;
+}
+
+[data-aos="line-grows"].aos-animate {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
