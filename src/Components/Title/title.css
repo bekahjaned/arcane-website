@@ -1,3 +1,11 @@
+.title-wrap-large {
+  width: 263px;
+}
+
+.title-wrap-small {
+  width: 203px;
+}
+
 .title {
   font-family: Cormorant;
   font-style: normal;
@@ -11,7 +19,7 @@
 }
 
 hr.blue {
-  width: 263px;
+  width: 100%;
   height: 4px;
   background: #135088;
   border-radius: 1px;
@@ -20,7 +28,7 @@ hr.blue {
 }
 
 hr.yellow {
-  width: 200px;
+  width: 75%;
   height: 4px;
   background: #d39411;
   border-radius: 1px;
@@ -29,7 +37,7 @@ hr.yellow {
 }
 
 hr.red {
-  width: 150px;
+  width: 50%;
   height: 4px;
   background: #ca0340;
   border-radius: 1px;

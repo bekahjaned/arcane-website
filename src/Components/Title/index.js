@@ -9,7 +9,7 @@ function Title({ text }) {
         Aos.init({duration: 1000})
     }, [])
     return (
-        <div>
+        <div className={(text === `About us`) ? `title-wrap-small` : 'title-wrap-large'}>
             <h1 data-aos="fade-down" className="title">{text}</h1>
             <hr data-aos="line-grows" className="blue" />
             <hr data-aos="line-grows" data-aos-delay="100" className="yellow" />
