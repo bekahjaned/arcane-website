@@ -14,14 +14,15 @@ const productsList = [
 ];
 
 // to do: 
-// - try to make the ProductCard align with the Title
-// - make arrows bigger (font-size property maybe?)
+// - is there a way to disable scrolling when hovering over the horizontal scroll menu (link)
+// - add unique images to ProductCard
+// - add animations to ProductCard
 
 const ProductCard = ({name, price}) => {
     return (
         <div className="menu-item">
             {/* <img src={require(`../../Assets/ProductImages/${image}.png`)} alt="product" /> */}
-            <img src={TestImage} alt="product"/>
+            <img src={TestImage} alt="product" draggable="false"/>
             <h2 className="product-name">{name}</h2>
             <h3 className="product-price">CAD {price}</h3>
         </div>
