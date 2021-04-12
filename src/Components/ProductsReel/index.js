@@ -46,11 +46,12 @@ const Arrow = ({text, className}) => {
 const ArrowLeft = Arrow({text: '<', className: 'arrow-prev'});
 const ArrowRight = Arrow({text: '>', className: 'arrow-next'});
 
-class ProductsReel extends React.Component {
-    productItems = Products(productsList)
+const ProductsReel = (props) => {
+    const productItems = Products(productsList)
+    const products = productItems;
 
-    render() {
-        const products = this.productItems;
+    let { isActive } = props;
+    console.log(isActive)
 
         return (
             <div className='products-reel'>
@@ -63,7 +64,6 @@ class ProductsReel extends React.Component {
                 />
             </div>
         )
-    }
 }
 
 export default ProductsReel
