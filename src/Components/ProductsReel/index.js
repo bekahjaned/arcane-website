@@ -1,8 +1,15 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import ScrollMenu from 'react-horizontal-scrolling-menu'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import './products-reel.css'
 
 import TestImage from '../../Assets/ProductImages/item-1.png';
+
+// to do: 
+// - is there a way to disable scrolling when hovering over the horizontal scroll menu (link)
+// - add unique images to ProductCard
+// - add animations to ProductCard
 
 const productsList = [
     { name: 'Item 1', price: '$100', image: 'item-1' },
@@ -13,15 +20,9 @@ const productsList = [
     { name: 'Item 6', price: '$600', image: 'item-6' }  
 ];
 
-// to do: 
-// - is there a way to disable scrolling when hovering over the horizontal scroll menu (link)
-// - add unique images to ProductCard
-// - add animations to ProductCard
-
 const ProductCard = ({name, price}) => {
     return (
         <div className="menu-item">
-            {/* <img src={require(`../../Assets/ProductImages/${image}.png`)} alt="product" /> */}
             <img src={TestImage} alt="product" draggable="false"/>
             <h2 className="product-name">{name}</h2>
             <h3 className="product-price">CAD {price}</h3>
@@ -46,17 +47,40 @@ const Arrow = ({text, className}) => {
 const ArrowLeft = Arrow({text: '<', className: 'arrow-prev'});
 const ArrowRight = Arrow({text: '>', className: 'arrow-next'});
 
-const ProductsReel = (props) => {
-    const productItems = Products(productsList)
-    const products = productItems;
+let targetElement = null;
+class ProductsReel extends React.Component {
+    componentDidMount() {
+        const node = ReactDOM.findDOMNode(this);
+        if (node instanceof HTMLElement) {
+            targetElement = node.querySelector('.products-reel');
+        }
+    }
 
-    let { isActive } = props;
-    console.log(isActive)
+    // trying to clean up my components, so it's not all in one
+    // but I can't change the target element here
+
+    productItems = Products(productsList)
+    products = this.productItems;
+
+    
+
+    checkIfActive = () => {
+        if(this.props.isActive === true) {
+            disableBodyScroll(targetElement);
+        }
+        else {
+            enableBodyScroll(targetElement);
+        }
+    }
+
+    render() {
+        console.log(this.props.isActive)
+        console.log(targetElement)
 
         return (
-            <div className='products-reel'>
+            <div className='products-reel' onMouseEnter={this.checkIfActive}>
                 <ScrollMenu 
-                    data={products}
+                    data={this.products}
                     arrowLeft={ArrowLeft}
                     arrowRight={ArrowRight}
                     alignCenter={false}
@@ -64,6 +88,43 @@ const ProductsReel = (props) => {
                 />
             </div>
         )
+    }
+        
 }
 
 export default ProductsReel
+
+
+// functional component... can I pass the target as props
+// to get it to work?
+
+// const ProductsReel = (props) => {
+//     const productItems = Products(productsList)
+//     const products = productItems;
+
+//     let { isActive = false } = props;
+//     console.log(isActive)
+
+//     const checkIfActive = () => {
+//         if(isActive === true) {
+//             disableBodyScroll(props.targetElement);
+//         }
+//         else {
+//             enableBodyScroll(props.targetElement);
+//         }
+//     }
+
+//         return (
+//             <div className='products-reel' onMouseEnter={checkIfActive()}>
+//                 <ScrollMenu 
+//                     data={products}
+//                     arrowLeft={ArrowLeft}
+//                     arrowRight={ArrowRight}
+//                     alignCenter={false}
+//                     transition={1}
+//                 />
+//             </div>
+//         )
+// }
+
+
