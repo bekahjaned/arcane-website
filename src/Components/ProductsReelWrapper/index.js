@@ -1,13 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import './products-reel.css'
+import './products-reel-wrapper.css'
 
 import TestImage from '../../Assets/ProductImages/item-1.png';
 
 // to do: 
-// - is there a way to disable scrolling when hovering over the horizontal scroll menu (link)
 // - add unique images to ProductCard
 // - add animations to ProductCard
 
@@ -47,38 +45,52 @@ const Arrow = ({text, className}) => {
 const ArrowLeft = Arrow({text: '<', className: 'arrow-prev'});
 const ArrowRight = Arrow({text: '>', className: 'arrow-next'});
 
-let targetElement = null;
-class ProductsReel extends React.Component {
-    componentDidMount() {
-        const node = ReactDOM.findDOMNode(this);
-        if (node instanceof HTMLElement) {
-            targetElement = node.querySelector('.products-reel');
+
+class ProductsReelWrapper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.target = null;
+        this.setTarget = (element) => {
+            this.target = element;
         }
     }
+
+    // componentDidMount() {
+    //     this.checkIfActive();
+    //     console.log(this.target)
+    //     console.log(this.props.isActive)
+
+    // this doesn't work because it only runs when the 
+    // component mounts, so of course isActive will be false 
+    // and will stay false
+
+    // }
 
     // trying to clean up my components, so it's not all in one
     // but I can't change the target element here
 
+    // try making a new class component to put the ScrollMenu in
+    // body-scroll-lock documentation says that the component
+    // receiving the ref must be class component
+
     productItems = Products(productsList)
     products = this.productItems;
 
-    
 
     checkIfActive = () => {
         if(this.props.isActive === true) {
-            disableBodyScroll(targetElement);
+            disableBodyScroll(this.target);
         }
         else {
-            enableBodyScroll(targetElement);
+            enableBodyScroll(this.target);
         }
     }
 
     render() {
-        console.log(this.props.isActive)
-        console.log(targetElement)
+        
 
         return (
-            <div className='products-reel' onMouseEnter={this.checkIfActive}>
+            <div className='products-reel' ref={this.setTarget} onMouseEnter={this.checkIfActive}>
                 <ScrollMenu 
                     data={this.products}
                     arrowLeft={ArrowLeft}
@@ -92,7 +104,7 @@ class ProductsReel extends React.Component {
         
 }
 
-export default ProductsReel
+export default ProductsReelWrapper
 
 
 // functional component... can I pass the target as props
