@@ -3,7 +3,7 @@ import ReactCursorPosition from 'react-cursor-position';
 import './textiles-area.css'
 
 import Title from '../Title/'
-import ProductsReelWrapper from '../ProductsReelWrapper'
+import ProductsReelWrapper from '../ProductsReelWrapper/'
 class TextilesArea extends React.Component {
 
     render() {

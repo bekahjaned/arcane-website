@@ -79,15 +79,17 @@ class ProductsReelWrapper extends React.Component {
 
     checkIfActive = () => {
         if(this.props.isActive === true) {
+            console.log(this.props.isActive)
             disableBodyScroll(this.target);
         }
         else {
+            console.log(this.props.isActive)
             enableBodyScroll(this.target);
         }
     }
 
     render() {
-        
+    
 
         return (
             <div className='products-reel' ref={this.setTarget} onMouseEnter={this.checkIfActive}>
@@ -101,7 +103,6 @@ class ProductsReelWrapper extends React.Component {
             </div>
         )
     }
-        
 }
 
 export default ProductsReelWrapper
