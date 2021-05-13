@@ -1,4 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
+import ReactCursorPosition from 'react-cursor-position';
+
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import './products-reel-wrapper.css'
@@ -8,6 +11,26 @@ import TestImage from '../../Assets/ProductImages/item-1.png';
 // to do: 
 // - add unique images to ProductCard
 // - add animations to ProductCard
+
+let target = null;
+class ProductsReelWrapper extends React.Component {
+    componentDidMount() {
+        const node = ReactDOM.findDOMNode(this);
+        if (node instanceof HTMLElement) {
+            target = node.querySelector('.products-reel');
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <ReactCursorPosition>
+                    <ProductsReel />
+                </ReactCursorPosition> 
+            </div>
+        )
+    }   
+}
 
 const productsList = [
     { name: 'Item 1', price: '$100', image: 'item-1' },
@@ -46,15 +69,7 @@ const ArrowLeft = Arrow({text: '<', className: 'arrow-prev'});
 const ArrowRight = Arrow({text: '>', className: 'arrow-next'});
 
 
-class ProductsReelWrapper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.target = null;
-        this.setTarget = (element) => {
-            this.target = element;
-        }
-    }
-
+class ProductsReel extends React.Component {
     // componentDidMount() {
     //     this.checkIfActive();
     //     console.log(this.target)
@@ -74,25 +89,24 @@ class ProductsReelWrapper extends React.Component {
     // receiving the ref must be class component
 
     productItems = Products(productsList)
-    products = this.productItems;
-
-
+    products = this.productItems; 
+    
     checkIfActive = () => {
         if(this.props.isActive === true) {
-            console.log(this.props.isActive)
-            disableBodyScroll(this.target);
+            console.log("function is running")
+            disableBodyScroll(target);
         }
         else {
-            console.log(this.props.isActive)
-            enableBodyScroll(this.target);
+            console.log("function is running, but showing inactive")
+            enableBodyScroll(target);
         }
     }
 
     render() {
-    
+        console.log(this.props.isActive)
 
         return (
-            <div className='products-reel' ref={this.setTarget} onMouseEnter={this.checkIfActive}>
+            <div className='products-reel' onMouseEnter={this.checkIfActive}>
                 <ScrollMenu 
                     data={this.products}
                     arrowLeft={ArrowLeft}
@@ -106,38 +120,5 @@ class ProductsReelWrapper extends React.Component {
 }
 
 export default ProductsReelWrapper
-
-
-// functional component... can I pass the target as props
-// to get it to work?
-
-// const ProductsReel = (props) => {
-//     const productItems = Products(productsList)
-//     const products = productItems;
-
-//     let { isActive = false } = props;
-//     console.log(isActive)
-
-//     const checkIfActive = () => {
-//         if(isActive === true) {
-//             disableBodyScroll(props.targetElement);
-//         }
-//         else {
-//             enableBodyScroll(props.targetElement);
-//         }
-//     }
-
-//         return (
-//             <div className='products-reel' onMouseEnter={checkIfActive()}>
-//                 <ScrollMenu 
-//                     data={products}
-//                     arrowLeft={ArrowLeft}
-//                     arrowRight={ArrowRight}
-//                     alignCenter={false}
-//                     transition={1}
-//                 />
-//             </div>
-//         )
-// }
 
 
