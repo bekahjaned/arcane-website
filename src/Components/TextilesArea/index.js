@@ -6,7 +6,7 @@ import './textiles-area.css'
 import Title from '../Title/'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import './../ProductsReel/products-reel.css'
+import './products-reel.css'
 
 import TestImage from '../../Assets/ProductImages/item-1.png';
 
@@ -31,9 +31,7 @@ class TextilesArea extends React.Component {
     }   
 }
 
-
 // -------------------------------------------------------
-
 
 const productsList = [
     { name: 'Item 1', price: '$100', image: 'item-1' },
@@ -90,7 +88,6 @@ class ProductsReel extends React.Component {
     
 
     render() {
-        console.log(this.props.isActive)
 
         return (
             <div className='products-reel' onMouseEnter={this.checkIfActive()}>
