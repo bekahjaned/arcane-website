@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import ReactCursorPosition from 'react-cursor-position';
-import './textiles-area.css'
+// import './textiles-area.css'
 
 import Title from '../Title/'
+import { TextilesAreaWrap } from '../../Elements/TextilesAreaWrap/'
+
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import './products-reel.css'
 
 import TestImage from '../../Assets/ProductImages/item-1.png';
 
@@ -21,12 +22,12 @@ class TextilesArea extends React.Component {
 
     render() {
         return (
-            <div className="textiles-area">
+            <TextilesAreaWrap>
                 <Title text="Our textiles" />
                 <ReactCursorPosition>
                     <ProductsReel />
                 </ReactCursorPosition>
-            </div>
+            </TextilesAreaWrap>
         )
     }   
 }
@@ -68,10 +69,6 @@ const Arrow = ({text, className}) => {
 
 const ArrowLeft = Arrow({text: '<', className: 'arrow-prev'});
 const ArrowRight = Arrow({text: '>', className: 'arrow-next'});
-
-
-// const ProductsReel = (props) => {
-
 
 class ProductsReel extends React.Component {
     productItems = Products(productsList)
