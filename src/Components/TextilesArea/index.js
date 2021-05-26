@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import ReactCursorPosition from 'react-cursor-position';
-// import './textiles-area.css'
 
 import Title from '../Title/'
 import { TextilesAreaWrap } from '../../Elements/TextilesAreaWrap/'
