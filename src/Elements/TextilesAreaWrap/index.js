@@ -70,12 +70,40 @@ export const TextilesAreaWrap = styled.div`
     }
 
     .menu-item:hover {
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.15));
+
         .product-name {
             display: block;
+            animation: slideRight 0.5s ease-in-out;
         }
 
         .product-price {
             display: block;
+            animation: slideLeft 0.5s ease-in-out;
         }
     }
+
+    @keyframes slideRight {
+        0% {
+          translate: -30px 0;
+          opacity: 0;
+        }
+      
+        100% {
+          translate: 0 0;
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideLeft {
+        0% {
+          translate: 30px 0;
+          opacity: 0;
+        }
+      
+        100% {
+          translate: 0 0;
+          opacity: 1;
+        }
+      }
 `
