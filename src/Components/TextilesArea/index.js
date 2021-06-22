@@ -10,6 +10,9 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import TestImage from '../../Assets/ProductImages/item-1.png';
 
+// To do:
+// - fix image bug, won't show individual images
+
 let target = null;
 class TextilesArea extends React.Component {
     componentDidMount() {

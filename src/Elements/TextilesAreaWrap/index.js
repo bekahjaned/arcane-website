@@ -18,6 +18,10 @@ export const TextilesAreaWrap = styled.div`
         padding: 20px;
         cursor: pointer;
     }
+
+    .menu-wrapper--inner {
+      height: 550px;
+    }
     
     .menu-item {
         position: relative;
@@ -70,7 +74,7 @@ export const TextilesAreaWrap = styled.div`
     }
 
     .menu-item:hover {
-        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.15));
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.15));
 
         .product-name {
             display: block;
