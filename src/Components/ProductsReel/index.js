@@ -17,6 +17,9 @@ let productList = [
     {name: "Item 6", price: "$600", image: Image6}
 ]
 
+// to-do:
+// - separate productsreel styling from textilesareawrap
+
 const ProductCard = ({name, price, image}) => {
     return (
         <div className="menu-item">
