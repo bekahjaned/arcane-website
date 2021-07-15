@@ -1,6 +1,8 @@
 import React from 'react'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 
+import { ProductsReelWrap } from '../../Elements/ProductsReelWrap/'
+
 import Image1 from '../../Assets/ProductImages/item-1.png';
 import Image2 from '../../Assets/ProductImages/item-2.png';
 import Image3 from '../../Assets/ProductImages/item-3.png';
@@ -55,7 +57,7 @@ class ProductsReel extends React.Component {
 
     render() {
         return (
-            <div className='products-reel' >
+            <ProductsReelWrap>
                 <ScrollMenu 
                     data={this.products}
                     arrowLeft={ArrowLeft}
@@ -64,7 +66,7 @@ class ProductsReel extends React.Component {
                     transition={1}
                     wheel={false}
                 />
-            </div>
+            </ProductsReelWrap>
         )
     }
         
