@@ -13,6 +13,8 @@
 - add ProductsReel to ProductsArea
 - add logo and 'Handcrafted in Peru' text to Hero component
 
+Complete
+
 ### ProcessPage
 
 - create ProcessPage component with Title
