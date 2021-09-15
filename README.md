@@ -1,3 +1,13 @@
+# Arcane
+
+A website to showcase products and process of a small business that specializes in tapestry-weaving. All products are handcrafted in Peru. 
+
+## Stack
+
+This front-end client was built in React and Styled Components. 
+
+Created animations using [Animate on Scroll](https://michalsnik.github.io/aos/)
+
 # Feature planning to scope out the MVP
 
 ## MVPs
